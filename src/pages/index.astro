@@ -1,0 +1,27 @@
+---
+
+import Greeting from "../components/Greeting";
+
+import Baselayout from "../layouts/Baselayout.astro";
+
+const pagetitle = "Astro Blog";
+
+
+---
+
+<Baselayout pagetitle={pagetitle}>
+	<h2>ブログのサブタイトル</h2>
+	<Greeting 
+	client:load
+	messages={["こんにちは","どうも","初めまして","ようこそ"]}/>
+</Baselayout>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+---
+import "../styles/global.css"
+
+
+const identity = {
+    name: "New Tec Blog",
+    country:"japan",
+    occapation:"CoffeeMaster",
+    hobbies:["コーディング","ジム","読書"],
+}
+
+const skills = ["HTML" ,"CSS","JavaScript"]
+
+const skillColor ="green";
+const fontWeight ="bold";
+const textCase = "uppercase";
+
+import Baselayout from "../layouts/Baselayout.astro";
+
+const pagetitle = "About";
+
+
+
+---
+
+
+<style define:vars={{skillColor,fontWeight,textCase}}>
+	h1{
+		color: purple;
+		font-size: 3rem;
+	}
+	.skill{
+		color: var(--skillColor);
+		font-weight: var(--fontWeight);
+		text-transform: var(--textCase) ;
+	}
+</style>
+	
+	
+	
+
+
+<Baselayout pagetitle={pagetitle}>
+
+        <h2>今回は、Astroフレームワークを使って高速で動くブログを作っていきたいと思います。</h2>
+        <p>色んなフロントエンドの技術をつけて、これからも学習を頑張っていきます。</p>
+        <p>私について</p>
+        <ul>
+            <li>私の名前は{identity.name} </li>
+            <li>私は、{identity.country}に住んでいます。職業は、{identity.occapation}</li>
+			{
+				identity.hobbies.length >= 2 && (
+					<li>
+					私の趣味は、２つあって１つは、(identity.hobbies[0])と(identity.hobbies[1])
+					</li>
+				)
+			}
+        </ul>
+		<p>私のスキル</p>
+		<ul >
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
+		</ul>
+</Baselayout>
+
