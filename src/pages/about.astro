@@ -3,10 +3,10 @@ import "../styles/global.css"
 
 
 const identity = {
-    name: "New Tec Blog",
-    country:"japan",
-    occapation:"CoffeeMaster",
-    hobbies:["コーディング","ジム","読書"],
+    name: "Kazuki",
+    country:"日本",
+    occapation:"",
+    hobbies:["プログラミング","筋トレ","読書"],
 }
 
 const skills = ["HTML" ,"CSS","JavaScript"]
@@ -42,23 +42,24 @@ const pagetitle = "About";
 
 <Baselayout pagetitle={pagetitle}>
 
-        <h2>今回は、Astroフレームワークを使って高速で動くブログを作っていきたいと思います。</h2>
-        <p>色んなフロントエンドの技術をつけて、これからも学習を頑張っていきます。</p>
+        <h2>Sample</h2>
+        <p>Demo Text</p>
         <p>私について</p>
         <ul>
-            <li>私の名前は{identity.name} </li>
-            <li>私は、{identity.country}に住んでいます。職業は、{identity.occapation}</li>
+            <li>私の名前は{identity.name}です </li>
+            <li>私は、{identity.country}に住んでいます</li>
 			{
 				identity.hobbies.length >= 2 && (
 					<li>
-					私の趣味は、２つあって１つは、(identity.hobbies[0])と(identity.hobbies[1])
+					私の趣味は、２つあリます
+					{identity.hobbies[0]}と{identity.hobbies[1]}です
 					</li>
 				)
 			}
         </ul>
-		<p>私のスキル</p>
+		<!-- <p>私のスキル</p>
 		<ul >
 			{skills.map((skill) => <li class="skill">{skill}</li>)}
-		</ul>
+		</ul> -->
 </Baselayout>
 
